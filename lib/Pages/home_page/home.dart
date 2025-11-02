@@ -18,7 +18,6 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // 1st section
             Container(
               padding: const EdgeInsets.only(top: 50.0, left: 20.0, right: 20.0),
               height: 100.0,
@@ -49,15 +48,11 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-
             const SizedBox(height: 30.0),
-
-            // second item
             Container(
-              
               padding: const EdgeInsets.all(20.0),
               margin: const EdgeInsets.all(15.0),
-              height: 250.0,
+              height: 230.0,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
@@ -75,7 +70,7 @@ class _HomeState extends State<Home> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  const SizedBox(height: 10.0),
+                  const SizedBox(height: 5.0),
                   const Text(
                     "TK 2500.00",
                     style: TextStyle(
@@ -84,19 +79,12 @@ class _HomeState extends State<Home> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10.0),
                   const Divider(thickness: 2.0, color: Colors.black),
-                  const SizedBox(height: 20),
-
-                  // 🔹 Fixed Row section
+                  const SizedBox(height: 10.0),
                   Row(
-
-
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      // আয়
-
-
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
@@ -111,17 +99,11 @@ class _HomeState extends State<Home> {
                           ),
                         ],
                       ),
-
-
-                      // 🔸 সহজ মাঝের Divider
                       Container(
                         height: 50,
                         width: 2,
-                        color: Colors.grey.shade400,
+                        color: Colors.grey,
                       ),
-
-
-                      // ব্যয়
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
@@ -141,9 +123,115 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
+            const SizedBox(height: 20.0),
+            Container(
+              margin: const EdgeInsets.only(left: 30.0, right: 30.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.09, // screen height এর 9%
+                    width: MediaQuery.of(context).size.width * 0.40,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/images/add.png",
+                          height: 30.0,
+                          width: 30.0,
+                          color: Colors.white,
+                        ),
+                        const SizedBox(width: 8.0),
+                        const Text(
+                          "আমার আয়",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.09,
+                    width: MediaQuery.of(context).size.width * 0.40,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/images/add.png",
+                          height: 30.0,
+                          width: 30.0,
+                          color: Colors.white,
+                        ),
+                        const SizedBox(width: 8.0),
+                        const Text(
+                          "আমার ব্যয়",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+
+                      ],
+                    ),),
+
+
+                ],
+              ),
+            ),
+
+
+
           ],
         ),
       ),
+
+
+      //bototom navbar
+
+      bottomNavigationBar: BottomNavigationBar(
+
+          currentIndex: 0,
+
+          selectedItemColor: Colors.green,
+          unselectedItemColor: Colors.black,
+
+
+          unselectedLabelStyle: const TextStyle(
+            color: Colors.black, // এই রঙও unselectedItemColor দ্বারা ওভাররাইড হবে
+            fontWeight: FontWeight.w500,
+            fontSize: 13,
+          ),
+
+
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home),
+            label: "Home"),
+
+            BottomNavigationBarItem(icon: Icon(Icons.note_alt_outlined),
+                label: "hisab"),
+
+            BottomNavigationBarItem(icon: Icon(Icons.area_chart,color: Colors.black,),
+                label: "chart",
+
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.person),
+                label: "profile")
+
+
+
+          ]),
+
+
     );
   }
 }
