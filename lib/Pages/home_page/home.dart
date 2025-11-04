@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -198,38 +199,54 @@ class _HomeState extends State<Home> {
 
       //bototom navbar
 
-      bottomNavigationBar: BottomNavigationBar(
+      // bottomNavigationBar: BottomNavigationBar(
+      //
+      //     currentIndex: 0,
+      //
+      //     selectedItemColor: Colors.green,
+      //     unselectedItemColor: Colors.black,
+      //
+      //
+      //     unselectedLabelStyle: const TextStyle(
+      //       color: Colors.black, // এই রঙও unselectedItemColor দ্বারা ওভাররাইড হবে
+      //       fontWeight: FontWeight.w500,
+      //       fontSize: 13,
+      //     ),
+      //
+      //
+      //     items: [
+      //       BottomNavigationBarItem(icon: Icon(Icons.home),
+      //       label: "Home"),
+      //
+      //       BottomNavigationBarItem(icon: Icon(Icons.note_alt_outlined),
+      //           label: "hisab"),
+      //
+      //       BottomNavigationBarItem(icon: Icon(Icons.area_chart,color: Colors.black,),
+      //           label: "chart",
+      //
+      //       ),
+      //       BottomNavigationBarItem(icon: Icon(Icons.person),
+      //           label: "profile")
+      //
+      //
+      //
+      //     ]),
 
-          currentIndex: 0,
 
-          selectedItemColor: Colors.green,
-          unselectedItemColor: Colors.black,
+      ////ata crud //////
 
 
-          unselectedLabelStyle: const TextStyle(
-            color: Colors.black, // এই রঙও unselectedItemColor দ্বারা ওভাররাইড হবে
-            fontWeight: FontWeight.w500,
-            fontSize: 13,
-          ),
-
-
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home),
-            label: "Home"),
-
-            BottomNavigationBarItem(icon: Icon(Icons.note_alt_outlined),
-                label: "hisab"),
-
-            BottomNavigationBarItem(icon: Icon(Icons.area_chart,color: Colors.black,),
-                label: "chart",
-
-            ),
-            BottomNavigationBarItem(icon: Icon(Icons.person),
-                label: "profile")
-
-
-
-          ]),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.blueAccent,
+        items: <Widget>[
+          Icon(Icons.add, size: 30),
+          Icon(Icons.list, size: 30),
+          Icon(Icons.compare_arrows, size: 30),
+        ],
+        onTap: (index) {
+          //Handle button tap
+        },
+      ),
 
 
     );
