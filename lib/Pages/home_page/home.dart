@@ -237,11 +237,16 @@ class _HomeState extends State<Home> {
 
 
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.red,
+        color: Colors.white,
+        animationDuration: Duration(milliseconds: 600),
+        height: 50.0,
+
+
         items: <Widget>[
-          Icon(Icons.add, size: 30),
-          Icon(Icons.list, size: 30),
-          Icon(Icons.compare_arrows, size: 30),
+          Icon(Icons.home, size: 30, color: Colors.green,),
+          Icon(Icons.bar_chart, size: 30, color: Colors.green,),
+          Icon(Icons.person, size: 30, color: Colors.green,),
         ],
         onTap: (index) {
           //Handle button tap
